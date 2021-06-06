@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function  Person(name,age){
+          this.name=name;
+          this.age=age;   
+        }
+        Person.prototype.toString=function(){
+            console.log("name="+this.name+",age="+this.age);
+        }
+        var p=new Person("swk",16);
+        var p2=new Person("zbj",17);
+        var p3=new Person("shs",18);
+        var p4=new Person("zzj",29);
+        var p5=new Person("ngd",28);
+        var parr=[p,p2,p3,p4,p5];
+       
+       function getAdult(arr){
+           var newArr=[];
+             for(var i=0;i<arr.length;i++){
+              if(arr[i].age>=18)
+                newArr.push(arr[i]);
+             }
+             
+             return newArr;
+       }
+       var result=getAdult(parr);
+       console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

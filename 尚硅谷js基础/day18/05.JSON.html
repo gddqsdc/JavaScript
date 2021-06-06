@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 如果需要兼容ie7及以下的JSON操作，则可以通过引入一个外部的js文件来处理 -->
+   <script src="js/json2.js"></script>
+   <script>
+        var str='{"name":"孙悟空","age":18,"gender":"男"}';
+    /*
+    eval()  可以执行一段字符串形式的js代码，并将执行结果返回
+       如果使用eval执行的字符串中含有{},它会将{}当成是代码块
+        如果不希望将其当成代码块解析，需要在字符串前后加一个()
+    
+    */
+    var str2="alert('hello!')";
+    // eval(str2);
+    console.log(eval("("+str+")"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

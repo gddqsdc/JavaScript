@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun(){
+            alert("start");
+          
+           for(var i=0;i<5;i++){
+               console.log(i);
+               if(i==2)
+                 return;
+           }
+
+            alert("end");
+        }
+       // fun();
+
+       function fun2(){
+           //返回一个对象
+           return {name:"shs"};
+       }
+      // console.log(fun2().name);
+
+       function fun3(){
+          
+           function fun4(){
+               alert("我是fun4");
+           }
+            //返回一个函数对象
+           return fun4;
+       }
+       var a = fun3()
+    //    console.log(a);
+     // a();
+     fun3()();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

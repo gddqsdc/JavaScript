@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+         1、可以在事件对应的属性中设置一些js代码
+              当事件被触发时，这些代码会被执行
+        这种写法 结构和行为耦合，不方便维护
+     -->
+    <!-- <button id="btn" onmousemove="alert('讨厌，点我干嘛！')">按钮</button> -->
+   <button id="btn">按钮</button>
+   <script>
+        /*
+        事件就是用户和浏览器之间的交互行为
+          比如：点击按钮、鼠标移动、关闭窗口
+        */
+       /* 2、可以通过为按钮的对应事件绑定处理函数的形式来响应事件*/
+     var btn = document.getElementById("btn");
+      //绑定一个单击事件  像这种为单击事件绑定的函数，成为单击响应函数
+     btn.onclick = function(){
+         alert("你点我干嘛！");
+     };
+    </script>
+</body>
+</html>

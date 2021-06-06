@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var btn01=document.getElementById("btn01");
+            // btn01.onclick=function(){
+            //     alert(1);
+            // };
+            /*
+            使用对象.事件 = 函数 的形式  只能同时为一个元素的一个事件绑定一个响应函数，
+                如果绑定多个 后边的会覆盖前边的响应函数
+            addEventListener()也可以为元素绑定响应函数 ie8及以下不支持
+               参数：1、事件的字符串，不要on
+                     2、回调函数，事件触发时被调用
+                     3、是否在捕获阶段触发函数，布尔值，一般false
+                可以同时为一个元素的相同事件同时绑定多个响应函数
+                     */
+          btn01.addEventListener("click",function(){
+              alert(1);
+          },false);           
+          btn01.addEventListener("click",function(){
+              alert(2);
+          },false);   
+         
+          /*
+          attachEvent() ie8可以使用 绑定事件
+           参数：1、事件的字符串 要on
+                 2、回调函数
+         它先绑定后执行 执行顺序与addEventListener相反
+          */
+          var btn02=document.getElementById("btn02");
+          btn02.attachEvent("onclick",function(){
+              alert(1);
+          });
+          btn02.attachEvent("onclick",function(){
+              alert(2);
+          });
+          
+        };
+        //定义一个函数，为指定元素绑定响应函数
+        /*     addEventListener中的this是绑定事件的对象
+               attachEvent中的this是window 
+        需要统一两个方法的this
+         
+        参数：     obj 要绑定事件的元素对象
+                  eventStr用来为指定元素绑定响应函数(不要on)
+                  callback回调函数
+        */
+       function bind(obj , eventStr , callback){
+           if(obj.addEventListener){
+           obj.addEventListener(eventStr,callback,falase);
+        }else{
+
+           obj.attachEvent("on"+eventStr, function(){
+               callback.call(obj);
+           });
+       }
+    }
+    </script>
+</head>
+<body>
+    <button id="btn01">按钮1</button>
+    <button id="btn02">按钮2</button>
+</body>
+</html>

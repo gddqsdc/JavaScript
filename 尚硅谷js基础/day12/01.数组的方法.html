@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        concat() 可以连接两个或多个数组，并将新数组返回
+           不会影响原数组
+        join() 可以将数组转换为一个字符串并返回
+           不会影响原数组，在（）中指定一个成为元素间连接符的字符串
+                          默认是,连接符
+        reverse() 反转数组  会直接修改原数组   
+        sort()    对数组中的元素排序(按Unicode编码排序)  会直接修改原数组               
+                    可以添加一个回调函数，自己指定排序规则
+                    在回调函数中定义两个形参,浏览器会使用数组元素作为实参调用回调函数
+                     a一定在b前面  
+                     如果返回一个大于0的值，则元素会交换位置
+        */ 
+        var arr=["swk","zbj","shs"];
+        var arr1=["zzj","bgj","asd"];
+        var arr2=["asdz","eee","qqq"];
+        var arr3=arr.concat(arr1,arr2);
+        console.log(arr3);
+
+        var r = arr.join("*");
+        console.log(r);
+
+        arr=["a","e","y","d","z"];
+        arr.reverse();
+        console.log(arr);
+        arr.sort();
+        console.log(arr);
+
+        arr=[5,4,2,1,3,6,8,7];
+        arr.sort(function(a,b){
+               return a-b; //升序排列       
+               //return b-a; //降序排列       
+        });
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

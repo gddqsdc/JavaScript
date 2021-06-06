@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+   方式五：构造函数+原型的组合模式
+      套路：自定义构造函数，属性在函数中初始化，方法添加到原型上
+      适用场景：需要创建多个类型确定的对象
+ -->
+    
+    <script>
+     function Person(name , age){
+        this.name = name
+        this.age = age
+        }
+    Person.prototype.setName = function(name){
+        this.name = name
+    }
+    var p1 = new Person('tom',12)
+    var p2 = new Person('lily',14)
+    console.log(p1,p2)
+    p1.setName('fff')
+    p2.setName('aaa')
+    console.log(p1,p2)
+    </script>
+</body>
+</html>

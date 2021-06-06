@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function Person(name,age,gender){
+           this.name =name;
+           this.age=age;
+           this.gender=gender;
+     //      this.sayName=say;
+       }
+    //    function say(){
+    //        alert(this.name);
+    //    }
+
+    //向原型中添加sayName
+    Person.prototype.sayName=function(){
+            alert("hello,我是"+this.name);
+        }
+       per=new Person("孙悟空",18,"男");
+       per2=new Person("猪八戒",18,"男");
+       per.sayName();
+       per2.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

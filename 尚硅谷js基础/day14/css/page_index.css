@@ -1,0 +1,57 @@
+
+.all{
+	width: 1040px;
+	height: 580px;
+	/* background-color: yellowgreen; */
+	border:black,solid,1px;
+	margin: 10px auto;
+}
+ ul,li{
+    list-style: none;
+  padding: 0px;
+  margin: 0px;
+ }
+.fevor{
+	width: 570px;
+	height: 410px;
+	/* background-color: peachpuff; */
+	border-style: solid;
+	border-width: 1px;
+	float: left;
+	padding: 0.625rem;
+}
+ 
+.buts{
+	width: 420px;
+	height: 580px;
+	/* background-color: aquamarine; */
+	float: right;
+	
+}
+.basic{
+	width: 570px;
+	height: 100px;
+	/* background-color: aquamarine; */
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	margin-top: 10px;
+	font:20px "arial" ;
+	padding: 10px;
+}
+.buts button{
+	width: 420px;
+	height: 34px;
+	margin:0 auto 19px ;
+}
+.fevor p{
+	margin: 40px 0px;
+}
+.fevor li{
+	font-size: 20px;
+	float: left;
+	padding: 10px;
+	margin: 0 10px 15px 0;
+	border: black solid 1px;
+	background-color:aquamarine;
+}

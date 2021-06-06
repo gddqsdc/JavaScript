@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        调用函数时，浏览器会传递两个隐含的参数
+         1、this
+         2、封装实参的对象arguments  是一个类数组对象
+           调用函数时，传递的实参都会封装到arguments中保存
+             即是不定义形参，也可以通过arguments使用实参
+            它有个属性叫callee，对应当前正在指向的函数的对象
+           */
+        function fun(a,b){
+            console.log(arguments.length);
+           console.log(arguments[1]);
+           console.log(arguments.callee);
+        }
+        fun("hello",true );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

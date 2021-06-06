@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = {
+            name:"swk",
+            age: 18,
+            gender:"男",
+            address:"花果山"
+        };
+        //枚举对象中的属性
+        //使用 for ... in 语句
+        /*
+           for(var 变量 in 对象){
+
+           }
+        */
+       for(var n in obj){
+           //每次执行时，会将对象中的一个属性的名字赋值给变量
+           console.log(obj[n]);
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

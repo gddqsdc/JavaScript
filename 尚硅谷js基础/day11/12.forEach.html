@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=["swk","zbj","shs"];
+        //forEach()方法需要一个函数作为参数
+        //像这种函数 由我们创建但不由我们调用，称为回调函数
+        //数组中有几个元素 函数就会执行几次,
+        // 每次执行时浏览器会将遍历到的元素以实参的形式传递进来
+        // 会传递三个参数
+        //  - 第一个参数，是当前遍历到的元素arr[i]
+        //  - 第二个参数，是当前遍历到的元素的索引i
+        //  - 第三个参数，是正在遍历的数组arr
+        arr.forEach(function(value,index,obj){
+             console.log("value="+value);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

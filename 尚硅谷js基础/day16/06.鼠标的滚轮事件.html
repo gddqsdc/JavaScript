@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+          function bind(obj , eventStr , callback){
+           if(obj.addEventListener){
+           obj.addEventListener(eventStr,callback,true);
+        }else{
+
+           obj.attachEvent("on"+eventStr, function(){
+               callback.call(obj);
+           });
+       }
+    }
+        window.onload=function(){
+            //滚轮向下box1边长 向上 box1变短
+            /*
+            onmousewheel鼠标滚轮滚动事件
+             但火狐不支持 需要用DOMMouseScroll来绑定滚动事件
+                      该事件需要用addEventListener()函数来绑定
+            */
+            var box1=document.getElementById("box1");
+           box1.onmousewheel=function(event){
+               //event.wheelDelta 获得鼠标滚轮方向 不看大小只看正负
+              // alert(event.wheelDelta);
+               //火狐不支持 需要用event.detail获取滚动方向
+               if(event.wheelDelta>0 || event.detail<0){
+                   box1.style.height=box1.clientHeight - 10 +"px";               }
+                   else{
+                    box1.style.height=box1.clientHeight + 10 +"px";
+               }
+              /*使用addEventListener()方法绑定响应函数，取消默认行为时不能使用return false
+                需要使用event.preventDefault()取消默认行为;
+              */
+              event.preventDefault();
+               /*当滚轮滚动时，浏览器滚动条会默认滚动
+               如果不希望发生 可以取消默认行为 return false*/
+               return false;
+           };
+           bind(box1,"DOMMouseScroll",box1.onmousewheel);
+    
+        };
+    </script>
+</head>
+<body style="height: 2000px;">
+    <div id="box1"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 方法一：Object构造函数模式 
+      套路：使用 new Object()创建对象
+      使用：起始时不确定对象内部数据
+      问题：语句太多
+          
+    -->
+
+
+    <script>
+        
+        // 方法一：Object构造函数模式  
+        var p = new Object()
+       p.name = 'tom'
+       p.age = 12
+       p.setName = function(name){
+           this.name = name
+       }
+       console.log(p.name,p.age)
+       p.setName('liujie')
+       console.log(p.name,p.age)
+ </script>
+</body>
+</html>

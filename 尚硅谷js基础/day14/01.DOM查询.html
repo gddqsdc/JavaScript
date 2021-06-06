@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/page_index.css">
+		<script type="text/javascript">
+        /*
+        如需读取元素结点的属性，直接使用 元素.属性名
+          例如： 元素.id  元素.name 元素.value
+          注意：class属性不能采用这种方式，
+               读取class属性时需要用 元素.className
+        */
+			function myClick(btn,fun){
+				var btna = document.getElementById(btn);
+				btna.onclick = fun;
+			}
+			window.onload=function(){
+ 
+				myClick("but01",function(){
+					alert(document.getElementById("bj").innerHTML)
+				});
+				
+				myClick("but02",function(){
+					var lis=document.getElementsByTagName("li");
+					for (var i=0;i<lis.length;i++)
+					{
+						alert(lis[i].innerHTML);
+					}
+				});
+				
+				myClick("but03",function(){
+					var lis=document.getElementsByName("gender");
+					for (var i=0;i<lis.length;i++)
+					{
+						alert(lis[i].value);
+					}
+				});
+				
+				myClick("but04",function(){
+					var city=document.getElementById("city");
+					var citys=city.getElementsByTagName("li");
+					for (var i=0;i<citys.length;i++)
+					{
+						alert(citys[i].innerHTML);
+					}
+				});
+				
+				myClick("but05",function(){
+					var city=document.getElementById("city")
+					var citys=city.childNodes;
+					//childNodes属性会获取包括文本节点在内的所有节点
+					//根据DOM标签间空白也会当成文本节点
+					//在ie8及以下浏览器中，不会将空白文本当成子节点
+				     
+					var citys2=city.children;
+					/*
+					children属性可以获取当前元素的所有子元素
+					*/
+					alert(citys2.length);
+					for (var i=0;i<citys2.length;i++)
+					{
+						alert(citys2[i].innerHTML);
+					}
+				});
+				
+				myClick("but06",function(){
+					var phone=document.getElementById("phone");
+					//firstChild获取当前元素的第一个子节点（包含空白文本）
+					alert(phone.firstChild);
+					//firstElementChild获取当前元素的第一个子元素
+					//但不支持ie8及以下的浏览器
+					alert(phone.firstElementChild);
+				});
+				
+				myClick("but07",function(){
+					var bj=document.getElementById("bj");
+					alert(bj.parentNode.id);
+					alert(bj.parentNode.innerHTML);
+					//该属性可以获取元素内部的文本内容，与innerHTML类似，不同之处是它会自动将html去除
+					alert(bj.parentNode.innerText);
+				});
+				myClick("but08",function(){
+					var android=document.getElementById("android");
+			// previousSibling获取前一个兄弟节点 也可能获取空白文本
+					alert(android.previousSibling.innerHTML);
+			//previousElementSibling获取前一个兄弟元素 ie8及以下不支持
+			        alert(android.previousElementSibling.innerHTML);	
+				});
+				myClick("but09",function(){
+					var txt=document.getElementById("username");
+					alert(txt.value);
+				
+					
+				});
+				myClick("but10",function(){
+					var txt=document.getElementById("username");
+					// txt.value="zhangzhangzhang";
+					
+				});
+				myClick("but11",function(){
+					alert(document.getElementById("bj").innerHTML);
+					
+					var t = document.getElementById("bj").firstChild;
+					alert(t.nodeValue);
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div class="all">
+			<div class="fevor  inner">
+				<p>你最喜欢的城市：</p>
+				<ul id="city">
+					<li id="bj">北京</li>
+					<li>上海</li>
+					<li>纽约</li>
+					<li>巴塞罗那</li>
+				</ul>
+				<br>
+				<br>
+				<p>你最喜欢的城市：</p>
+				<ul id="game">
+					<li id="rl">红警</li>
+					<li>实况</li>
+					<li>极品飞车</li>
+					<li>魔兽</li>
+				</ul>
+				<br>
+				<br>
+				<p>你手机的操作系统是：</p>
+				<ul id="phone">
+					<li>IOS</li> <li id="android">android</li><li>Windows Phone</li>
+				</ul>
+			</div>
+			<div class="buts  inner">
+				<button type="button" id="but01">查找#bj节点</button>
+				<button type="button" id="but02">查找所有li节点</button>
+				<button type="button" id="but03">查找name=gender的所有节点</button>
+				<button type="button" id="but04">查找#city下的所有li节点</button>
+				<button type="button" id="but05">返回#city下的所有子节点</button>
+				<button type="button" id="but06">返回#phone下的第一个子节点</button>
+				<button type="button" id="but07">返回#bj的父节点</button>
+				<button type="button" id="but08">返回#android的前一个兄弟节点</button>
+				<button type="button" id="but09">返回#username的value属性</button>
+				<button type="button" id="but10">设置#username的value属性</button>
+				<button type="button" id="but11">返回#bj文本值</button>
+			</div>
+			<div class="basic  inner">
+				<span>gender:</span>
+				<input type="radio" name="gender" id="" value="male" />male
+				<input type="radio" name="gender" id="" value="female" />female
+				<br>
+				<br>
+				<span>name:</span>
+				<input type="text" id="username" value="hello" />
+			</div>
+		</div>
+		
+	</body>
+</html>

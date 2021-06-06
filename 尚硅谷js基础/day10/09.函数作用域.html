@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         调用函数时创建函数作用域，函数执行完毕后，函数作用域销毁
+         函数作用域中可以访问全局作用域的变量 
+         在全局作用域中无法访问函数作用域中的变量
+       
+         */
+     var a =123;
+     function fun(){
+         alert(a);
+         var a= 456;
+     }
+     fun();
+     alert(a);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

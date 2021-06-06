@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str="HelloWorld";
+        
+        console.log(str.length);
+        console.log(str[4]);
+        console.log(str.charAt(4));
+        console.log(str.charCodeAt(4)); //返回字符的Unicode编码
+        console.log(str.concat("hahaha")); //连接字符串
+        var r=String.fromCharCode(112);
+        console.log(r);
+        console.log(str.indexOf("l",4)); //返回字符串中该字符第一次出现的位置 ,第二个参数为查找的起始位置
+        console.log(str.lastIndexOf("l",8)); //从后往前找第一个字符
+       console.log(str.slice(2,5));
+       console.log(str.substring(2,5));
+       console.log(str.substr(2,5));
+       console.log("abc,zxc,qwe,ags".split(",")); //用,分割字符串为数组
+       console.log(str.toUpperCase());  //字符串大写
+       console.log(str.toLowerCase());  //字符串小写
+</script>
+</head>
+<body>
+    
+</body>
+</html>

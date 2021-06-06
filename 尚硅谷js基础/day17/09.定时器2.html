@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            position: absolute;
+            left:0;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+          var box1=document.getElementById("box1");
+          var btn01=document.getElementById("btn01");
+          var btn02=document.getElementById("btn02");
+          
+          btn01.onclick=function(){
+             move(box1,800,10);
+          };
+
+          btn02.onclick=function(){
+            move(box1,0,10);
+          };
+          var timer;
+          //创建一个可以执行简单动画的函数
+          /*
+          参数： obj 执行动画的对象
+                target 执行动画的目标位置
+                speed 移动速度
+          */
+          function move(obj , target,speed){
+            clearInterval(timer);
+            //获取元素目前的位置
+            var current=parseInt(getStyle(obj,"left"));
+            //判断speed的正负值
+            if(current > target){
+                speed=-speed;
+            }
+            timer=setInterval(function(){
+              var Old=parseInt(getStyle(obj,"left"));
+              var New=Old+speed;
+              //向左移动时，需判断New是否小于target
+              //向右移动时，需判断New是否大于target
+              if((speed<0 && New<target) || (speed>0&&New>target)){
+                  New=target;
+              }
+              obj.style.left=New+"px";
+              if(New==target){
+                
+                  clearInterval(timer);
+              }
+              
+            },30);
+          }
+        };
+
+        function getStyle(obj , name){
+            if(getComputedStyle){
+            //正常浏览器的方式
+           return getComputedStyle(obj , null)[name];
+        }else{
+           //ie8的方式
+           return obj.currentStyle[name];
+        }
+    }
+    </script>
+</head>
+<body>
+    <button id="btn01">按钮1</button>
+    <button id="btn02">按钮2</button>
+    <br>
+    <br>
+
+    <div id="box1"></div>
+    <div style="width: 0;height: 1000px;border-left: 1px solid #000;position:absolute;left: 800px;"></div>
+</body>
+</html>

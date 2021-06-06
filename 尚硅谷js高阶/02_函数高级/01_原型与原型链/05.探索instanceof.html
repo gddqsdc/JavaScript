@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+ 1、instanceof是如何判断的？
+    A instanceof B
+    如果B函数的显式原型对象在A对象的隐式原型链上，返回true，否则false
+ 2、Function是通过new自己产生的实例
+
+     -->
+     <script>
+         function Foo(){
+
+         }
+         var f1 = new Foo();
+         console.log(f1 instanceof Foo);  //true
+         console.log(f1 instanceof Object); //true
+
+     console.log(Object instanceof Function) //true
+     console.log(Object instanceof Object) //true
+     console.log(Function instanceof Function) //true
+     console.log(Function instanceof Object) //true
+
+     </script>
+</body>
+</html>

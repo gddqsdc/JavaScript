@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+          var btns = document.getElementsByTagName('button');
+        //    for(var i = 0,length=btns.length ; i <length ; i++){
+        //        btns[i].index=i+1 //将btn对应的下标保存到btn上
+        //        btns[i].onclick=function(){
+        //            alert('这是第'+this.index+'个按钮')
+        //        }
+        //    }
+
+          //利用闭包
+           for(var i = 0,length=btns.length ; i <length ; i++){
+               (function(i){
+                btns[i].onclick=function(){
+                    alert('这是第'+(i+1)+'个按钮')
+                }
+              })(i)
+           }
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">按钮1</button>
+    <button id="btn02">按钮2</button>
+    <button id="btn02">按钮3</button>
+</body>
+</html>

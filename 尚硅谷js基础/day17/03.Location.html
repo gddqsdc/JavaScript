@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        Location 对象封装了浏览器的地址栏信息
+           assign() 跳转到其他页面，作用和修改location一样
+                 会生成历史记录
+           reload() 重新加载当前页面 作用和刷新按钮一样
+                 如果传递一个true作为参数，则会强制清空缓存 刷新页面
+           replace() 使用一个新的页面替换当前页面
+                不会生成历史记录，不能使用回退按钮回退
+                 */
+   
+    window.onload=function(){
+        var btn=document.getElementById("btn");
+        btn.onclick=function(){
+            //若直接打印location，则可以获取地址栏的信息（完整路径）
+            //若直接将location修改为一个完整的路径，则页面会自动跳转到该路径，并且会生成相应的历史记录
+            // alert(location);
+            // location="http://www.baidu.com";
+            // location.assign("http://www.baidu.com");
+            // location.reload(true); 
+            location.replace("http://www.baidu.com");
+        
+        };
+    
+    };
+    </script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <h1>Location</h1>
+       <input type="text">
+</body>
+</html>

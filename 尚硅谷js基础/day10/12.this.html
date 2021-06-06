@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var name="全局";
+
+        function fun(){
+            console.log(this.name);
+        }
+        var obj={
+            name:"孙悟空",
+            sayName:fun
+        }
+        
+        var obj2={
+            name:"猪八戒",
+            sayName:fun
+        }
+        obj2.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

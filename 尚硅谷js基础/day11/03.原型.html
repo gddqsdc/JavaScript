@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function MyClass(){
+
+        }
+        MyClass.prototype.name="原型的name";
+        var mc = new MyClass();
+        mc.age=18;
+        console.log(mc.name);
+         
+        //hasOwnProperty方法可以检查对象自身中是否有该元素
+        console.log(mc.hasOwnProperty("age"));
+
+        //原型对象也有原型，当使用一个对象的属性或方法是，
+         //先在自身，再到原型，再到原型的原型，直到object对象的原型
+          //object对象的原型没有原型，是null
+          console.log(mc.__proto__.__proto__.__proto__);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

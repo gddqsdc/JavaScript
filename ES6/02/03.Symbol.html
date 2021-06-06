@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Symbol的值是唯一的
+        Symbol值不能与其他数据进行运算
+
+        */
+        //创建Symbol
+        let s = Symbol();
+        console.log(s, typeof s)
+
+        let s2 = Symbol('尚硅谷')
+        let s3 = Symbol('尚硅谷')
+        console.log(s2 === s3) //false
+
+        //Symbol.for创建
+        let s4 = Symbol.for('atguigu')
+        let s5 = Symbol.for('atguigu')
+        console.log(s4 === s5) //true
+
+        //不能与其他数据进行运算
+        // let result = s + 100
+        // let result = s > 100
+        // let result = s + s
+
+        //USONB
+        /*
+        u undefined
+        s string symbol
+        o object
+        n null number
+        b boolean
+        */
+
+    </script>
+</body>
+</html>

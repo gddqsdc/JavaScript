@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--  
+    关于引用变量赋值的问题
+     * 2个引用变量指向同一个对象，通过一个变量修改对象内部数据，另一个变量看到的是修改之后的数据
+     * 2个引用变量指向同一个对象，让其中一个引用变量指向另一个对象，另一个引用变量依然指向前一个对象
+    -->
+<script>
+    var obj1={name:'tom'};
+    var obj2=obj1;
+    obj1.name='jack';
+    console.log(obj2.name);
+
+    var a={age:12};
+    var b = a;
+    a = {name:'bob',age:13};
+    b.age = 14;
+    console.log(b.age, a.name, a.age);
+    function fn2(obj){
+         obj = {age:15};
+    }
+    fn2(a);
+    console.log(a.age);
+</script>
+</body>
+</html>

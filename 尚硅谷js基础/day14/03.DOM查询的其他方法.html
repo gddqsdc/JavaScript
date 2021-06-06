@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+           //获取body标签
+           var body = document.getElementsByTagName("body")[0];
+            //console.log(body);
+
+          //在document中有一个属性body，保存的是body的引用
+          var body = document.body;
+
+          //document.documentElement保存的是html根标签
+          var html = document.documentElement;
+
+          //document.all代表页面中的所有元素
+          var all = document.all;
+        //   for(var i=0;i<all.length;i++)
+        //   console.log(all[i]);
+
+          all = document.getElementsByTagName("*");
+          //console.log(all.length);
+      
+
+        //可以根据class属性值获取一组元素节点对象 但ie8及以下不支持
+        var box1 = document.getElementsByClassName("box1");
+        // console.log(box1.length);
+        
+        //获取页面中所有div
+        var divs=document.getElementsByTagName("div");
+
+        //获取class为box1中的所有div
+        //.box1 div
+        /*
+        document.querySelector()
+         需要一个选择器的字符串作为参数，可以根据css选择器来查询元素节点对象
+         使用该方法总会返回唯一的一个元素，如果满足条件的元素有多个，那么只会返回第一个
+         */
+       var div = document.querySelector(".box1 div");
+       var box1 = document.querySelector(".box1");
+        console.log(div.innerHTML);
+        console.log(box1.innerHTML);
+        
+       /*
+       document.querySelectorAll与querySelector类似
+        不同的是，它会将符合条件的元素封装到数组中，即使符合的只有一个，也会返回数组
+       */ 
+       var box1= document.querySelectorAll(".box1");
+    
+      console.log(box1.length);
+    };
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <div >我是box1中的div</div>
+    </div>
+    <div class="box1">
+        <div >我是box1中的div</div>
+    </div>
+    <div class="box1">
+        <div >我是box1中的div</div>
+    </div>
+  
+    <div></div>
+</body>
+</html>

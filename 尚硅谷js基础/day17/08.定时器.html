@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            position: absolute;
+            left:0;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+          var box1=document.getElementById("box1");
+          var btn=document.getElementById("btn");
+          var timer;
+          btn.onclick=function(){
+             clearInterval(timer);
+            //   alert(getStyle(box1,"left"));
+            timer=setInterval(function(){
+              var Old=parseInt(getStyle(box1,"left"));
+              var New=Old+11;
+              if(New>=800){
+                  New=800;
+              }
+              box1.style.left=New+"px";
+              if(New==800){
+                
+                  clearInterval(timer);
+              }
+              
+            },50);
+          };
+        };
+
+        function getStyle(obj , name){
+            if(getComputedStyle){
+            //正常浏览器的方式
+           return getComputedStyle(obj , null)[name];
+        }else{
+           //ie8的方式
+           return obj.currentStyle[name];
+        }
+    }
+    </script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <br>
+    <br>
+
+    <div id="box1"></div>
+    <div style="width: 0;height: 1000px;border-left: 1px solid #000;position:absolute;left: 800px;"></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+           
+           /*
+           键盘事件： onkeydown 按键被按下
+                  如果按着某个按键不松手，则事件会一直被触发
+                     onkeyup   按键被松开
+         键盘事件一般都会绑定给一些可以获取到焦点的对象或者document
+
+         可以通过keyCode获取按键的编码
+          除了keyCode event对象还提供了几个属性 altKey ctrlKey shiftKey
+          判断alt ctrl shilf是否被按下
+           */
+          document.onkeydown=function(event){
+            event =event || window.event;
+            if(event.keyCode==89 && event.ctrlKey)
+             alert("y和ctrl同时被按下了");
+          };
+
+        //   document.onkeyup=function(){
+        //      alert("松开");
+        //   };
+
+        var input=document.getElementsByTagName("input")[0];
+        input.onkeydown=function(event){
+            console.log(event.keyCode);
+            //在文本框中按下按键就输入内容，属于onkeydown的默认行为
+            //如果不希望发生 可以取消默认行为
+            if(event.keyCode>95 && event.keyCode<106)
+            {  
+              return false;
+            }
+
+        }
+        };
+    </script>
+</head>
+<body>
+    <input type="text" />
+</body>
+</html>

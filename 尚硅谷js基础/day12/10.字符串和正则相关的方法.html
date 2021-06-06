@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str="1a2b3c4d5e6f";
+       //split() 根据符号拆分字符串为数组  
+       //根据任意字母来将字符串拆分
+       //只能全局拆分
+        var r = str.split(/[A-z]/);
+        console.log(r);
+        //search() 搜索字符串中是否有指定内容,
+        //若有则返回第一次出现的索引，若没有则返回-1
+        //只会查找第一个，即使设置全局匹配也没用
+        str="hello abc hello aec afc";
+        //搜索字符串中是否含有abc或aec或afc
+        r= str.search(/a[bef]c/);
+        console.log(r);
+        //match() 从一个字符串中提取符合条件的内容,返回数组
+        // 默认情况下 match只会找到第一个符合要求的内容
+        //       我们可以设置正则表达式为全局匹配模式，这样就会匹配到所有内容
+        
+        var str="1a2a3a4d5a6f7H8K9AP";
+        r = str.match(/[A-z]/gi);
+        console.log(r);
+        //replace() 可以将字符串中指定内容替换为新的内容
+        // 默认只替换第一个
+        r = str.replace(/[a-z]/gi,"");
+        console.log(r);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

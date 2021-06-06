@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+       *{
+           margin: 0;
+           padding: 0; 
+       }
+       #outer{
+           width: 500px;
+
+           margin: 50px auto;
+           background-color: #bfa;
+           text-align: center;
+           overflow:hidden;
+       }
+   </style>
+</head>
+<body>
+    <div id="outer">
+        <p id="info">一共5张图，当前第1张</p>
+       <img src="img/1.jpg" alt="">
+            <button id="prev">上一张</button>
+            <button id="next">下一张</button>
+    </div>
+    <script>
+       //创建一个数组 保存图片路径
+       var imgArr = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"];
+       //创建一个变量 保存当前显示图片的索引
+       var index=0;
+
+    //设置提示文字
+   var info = document.getElementById("info");
+  
+   var btn1 = document.getElementById("prev");
+       btn1.onclick = function(){
+            if(index==0)
+              index=4;
+            else 
+            index=(index-1)%imgArr.length;
+            document.getElementsByTagName("img")[0].src=imgArr[index];
+            info.innerHTML="一共"+imgArr.length+"张图，当前第"+(index+1)+"张";
+        }
+        var btn2 = document.getElementById("next");
+        btn2.onclick = function(){
+            index=(index+1)%imgArr.length;
+            document.getElementsByTagName("img")[0].src=imgArr[index];
+            info.innerHTML="一共"+imgArr.length+"张图，当前第"+(index+1)+"张";
+        }
+
+
+  
+
+ 
+    </script>
+</body>
+</html>

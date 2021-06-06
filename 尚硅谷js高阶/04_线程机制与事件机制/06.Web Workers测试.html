@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--     
+ 1、H5规范提供了js分线程的实现，取名为 Web Workers
+ 2、相关API
+   * Worker：构造函数，加载分线程执行的js文件 
+   * Worker.prototype.onmessage：接收另一个线程的回调函数  
+   * Worker.prototype.postMessage：向另一个线程发送消息  
+ 3、不足
+   worker内代码不能操作DOM（更新UI）
+   慢（但不会阻塞主线程，不会冻结界面）
+   不能跨域加载js
+   兼容性问题 
+-->
+<input type="text" placeholder="数值" id="number">
+<button id="btn">计算</button>
+<script>
+    // 1 1 2 3 5 8 13
+       function fibonacci(number){
+           if(number==1||number==2)
+             return 1
+           return  (fibonacci(number-1) + fibonacci(number-2))
+       }
+      
+      
+      var input = document.getElementById('number')
+      var btn = document.getElementById('btn')
+      btn.onclick = function(){
+          var number = input.value
+          var result = fibonacci(number)
+          alert(result)
+      }
+</script>
+</body>
+</html>

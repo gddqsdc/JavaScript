@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #info{
+            width: 300px;
+            height: 500px;
+            background-color: #bfa;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            //onscroll 该事件会在元素的滚动条滚动时触发
+        var info = document.getElementById("info");
+        var box = document.getElementById("box");
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            alert((parseInt(info.scrollHeight) - parseInt(info.scrollTop )));
+            alert(parseInt(info.clientHeight));
+        };
+        info.onscroll = function(){
+              if((parseInt(info.scrollHeight) - parseInt(info.scrollTop ))== parseInt(info.clientHeight))
+               { box.disabled=false;
+            
+            }
+              else 
+              box.disabled=true;
+        };
+        
+        }
+    </script>
+</head>
+<body>
+    <h3>欢迎注册</h3>
+    <p id="info">请仔细阅读以下协议各培养单位、各位毕业生：
+
+        毕业生就业去向信息是办理就业手续的重要依据，为做好2021届毕业生就业手续办理有关工作，参照《中央民族大学毕业生就业工作实施细则》，现将毕业生就业去向信息填报有关事项通知如下：
+        
+        一、毕业生填报
+        
+        毕业生通过就业信息系统填报就业去向信息（具体填报指南见附件1）。填写信息确保真实、准确，上传附件材料真实、清晰、完整。
+        
+        （一）集中填报
+        
+        即日起至6月14日（周一），已经落实就业去向的毕业生可进行填报。在这一时段填报且审核通过的，可在毕业离校前取得报到证，离校阶段进行统一派遣。
+        
+        集中填报结束后，招就处对毕业生填报信息进行整理，就业方案反馈至各院系。各院系须对就业方案进行最终核对，院系领导签字盖章后，按规定时间反馈招就处，逾期将推迟至集中派遣之后再予办理。报到证将按就业方案报送先后顺序发放。
+        
+        （二）后续填报
+        
+        集中填报时段后落实就业去向的同学仍可随时登录填报，就业信息系统将持续开放，招就处对后续填报的同学每周集中进行手续办理，在每周周日前提交信息并审核通过的，一般可在下周二前领取报到证（如有上级政策调整，将按新要求执行）。
+        
+        （三）填报要求及相关注意事项
+        
+        1.本通知发布前已有学生开始填报去向信息，如果发现填报信息有误，可联系招就处退回；招就处也将进行集中审核，审核不通过的予以退回，请同学们定期登录系统关注审核结果，根据备注的原因对信息进行修改/更新、补充有关材料。
+        
+        2.曾申领三方协议的同学，请尽快在完成签约后将协议第一页交由学院集中转交或直接送至招就处（北智楼三层）。
+        
+        3.系统中，就业去向填报和申领三方协议是并列的两个模块，请注意区分。
+        
+        4.学生对填报信息真实性负责，定向生须严格履行定向协议的规定，户档派遣信息由招就处发相关职能部门审核后进行实际派遣。实际档案邮寄时间等具体事宜以相应职能部门安排为准。
+        
+        5.上级要求调整前，毕业生可继续申请将户档（户口和档案）留存学校2年。我们根据实际情况给同学们提出建议，请有需要的同学参考后根据自身情况选择（附件2）。
+        
+        二、其它有关事项
+        
+        1.就业信息采集系统是采集毕业生就业去向、了解各学院学生就业特点的重要工具。请各培养单位就业工作人员及时审核、提醒毕业生填报/追加信息，相关问题可在工作群组提出。
+        
+        2.为推进无纸化办公，升学及出国录取函件、就业证明等材料拍照后直接通过就业信息系统上传，不交纸质材料，就业三方协议书及落户接收函（北京、上海、广州、深圳、杭州等）上传就业系统后须报送原件。
+        
+        3.毕业生毕业去向可根据实际就业状况的变化而变更，毕业去向信息已上报上级后需变更的毕业生，需申请重新填报就业系统信息，并持有关书面材料到北智楼318变更，经审核后办理就业手续。
+        
+        联系人：杨老师 68932640
+        
+         
+        
+        附件1：毕业生就业去向信息填报指南
+        
+        附件2：给毕业生关于户档留存两年的说明 </p>
+        已阅读并同意此协议<input type="checkbox" id="box"  disabled="disabled">
+        <input type="submit">
+        <br>
+        <br>
+        <button id="btn">button</button>
+</body>
+</html>

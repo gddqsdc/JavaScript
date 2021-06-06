@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+       var obj={
+           name:"孙悟空",
+           age:18,
+           gender:"男",
+           sayName:function(){
+               alert(this.name);
+           }
+       };
+
+        /*
+        使用工厂方法创建对象
+        */
+       function createPerson(name,age,gender){
+              var obj= new Object();
+              obj.name=name;
+              obj.age=age;
+              obj.gender=gender;
+              obj.sayName = function(){
+                alert(this.name);
+              }
+              return obj;
+       }
+       obj2=createPerson("猪八戒",18,"男");
+       obj3=createPerson("白骨精",16,"女");
+       obj4=createPerson("蜘蛛精",18,"女");
+    
+      function createDog(name,age){
+          var obj=new Object();
+        obj.name=name;
+        obj.age=age;
+        obj.sayHello = function(){
+            alert("汪汪~");
+        };
+        return obj;
+        }
+          /*
+        使用工厂方法创建的对象都是Object,导致无法区分不同类型的对象
+        */
+        var dog=createDog("旺财",3);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

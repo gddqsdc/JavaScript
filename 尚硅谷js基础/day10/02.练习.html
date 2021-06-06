@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function isEven(n){
+              return n%2==0;
+        }
+        function square(r){
+            return Math.pow(r,2)*3.14;
+        }
+        // console.log(square(10));
+        function say(name,age,gender,address){
+              console.log("我叫"+name+"我今年"+age+"岁了");
+          }
+          //say("猪八戒",28);
+        
+          var obj ={
+              name:"sun",
+              age:18,
+              gender:"男",
+              address:"花果山"
+          }
+          function saya(a){
+              console.log("我叫"+a.name+"我今年"+a.age+"岁了");
+          }
+        //  saya(obj);
+
+        function fun(a){
+            console.log(a(obj));
+        }
+        fun(saya);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

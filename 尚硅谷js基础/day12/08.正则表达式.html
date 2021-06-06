@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        正则表达式用于定义一些字符串的规则
+          计算机可以根据正则表达式判断一个字符串是否符合规则
+        var 变量 = new RegExp("正则表达式","匹配模式");
+             在构造函数中可以传递一个匹配模式作为第二个参数
+                i 忽略大小写
+                g 全局匹配模式
+        */
+       var reg = new RegExp("a","i");  
+        //这个正则表达式可以检查一个字符串中是否含有a，严格区分大小写
+
+      /*
+      test() 使用这个方法可以检查一个字符串是否符合正则表达式
+      */    
+       console.log(reg.test("Abcc"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

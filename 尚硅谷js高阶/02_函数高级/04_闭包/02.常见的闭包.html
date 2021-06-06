@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--  
+1、将函数作为另一个函数的返回值
+2、将函数作为实参传递给另一个函数调用    
+-->
+<script>
+    // 1、将函数作为另一个函数的返回值
+    function fun1(){
+        var a = 2
+        function fun2(){
+           a++
+           console.log(a)
+        }
+        return fun2
+    }
+    var f = fun1()
+    f() //3
+    f() //4
+
+    fun1() //外部函数调用几次就产生几次闭包
+
+
+    // 2、将函数作为实参传递给另一个函数调用
+    function showdelay(msg,time){
+       setTimeout(function(){
+                 alert(msg);
+       },time)
+    }
+    showdelay('hello',2000)
+</script>
+</body>
+</html>

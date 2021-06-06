@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = new Object();
+        obj.name="swk";
+        obj.age=18;
+
+        //对象的属性值可以是任何的数据类型,也可以是个函数
+        obj.sayName = function(){
+            console.log(obj.name);
+        };
+        // console.log(obj.sayName);
+        obj.sayName();
+        
+        /*
+        如果一个函数作为对象的属性保存，
+        那么这个函数称为对象的方法(method)
+        */ 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=new Array();
+        
+        //使用字面量创建数组
+        var arr= [];
+        //document.write(typeof arr);
+
+        var arr1=[1,2,3,4,5,10];
+
+        var arr2=new Array(10,20,30);
+        var arr3=new Array(10); //长度为10
+
+        arr=["hello",1,true,null,undefined];
+        //数组元素可以是任意数据类型，也可以是对象
+        var obj={name:"swk"};
+        arr[arr.length]=obj;
+       console.log(arr[5].name);    
+       //也可以是一个函数
+       arr=[function(){alert(1)},function(){alert(2)}];
+       console.log(arr); 
+       arr[0]();  
+
+       arr=[[1,2,3],[3,4,5],[5,6,7]];
+       console.log(arr[0]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

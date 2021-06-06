@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            position: absolute;
+            top: 100px;
+        }
+    </style>
+    <script>
+        //使div根据不同的方向键向不同方向移动
+        window.onload=function(){
+            document.onkeydown=function(event){
+            var box1=document.getElementById("box1");
+            var speed=20;
+            //当按了shift后，速度加快
+            if(event.shiftKey){
+                speed*=2;
+            }
+                switch(event.keyCode){
+                    // 37左 38上 39右 40下
+                  case 37: box1.style.left=box1.offsetLeft-speed+"px";break;
+                  case 38: box1.style.top=box1.offsetTop-speed+"px";break;
+                  case 39: box1.style.left=box1.offsetLeft+speed+"px";break;
+                  case 40: box1.style.top=box1.offsetTop+speed+"px";break;
+              }
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>

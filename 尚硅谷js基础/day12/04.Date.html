@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var d = new Date();
+       
+
+        var d2=new Date("12/03/2016 14:42:30");
+        /*
+        getDate() 获取当前日期对象是几号
+        getDay()  获取当前日期对象是周几 返回0-6 0表示周日
+        getMonth()获取当前日期对象的月份 返回0-11 0表示1月 11表示12月
+        getFullYear()获取当前日期对象的年份
+
+        getTime() 获取当前日期对象的时间戳 1970.1.1 000到现在花费的毫秒数
+        */
+        var date=d.getDate();
+        var day=d.getDay();
+       // console.log(alert(d.getTime()));
+        var time=Date.now();
+        //console.log(alert(time));
+        var start=Date.now();
+        for(var i=0;i<100;i++){
+            console.log(i);
+        }
+        var end=Date.now();
+        console.log(end-start);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

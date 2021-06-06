@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        数组（Array）也是一个对象
+
+        对于连续数组，length可以获取数组的长度
+        对于非连续数组，length会获取数组的最大索引+1
+
+        修改length
+          如果修改的length大于原长度，多出部分会空出来
+          如果修改的length小于原长度，多出的元素会被删除
+        */
+       var arr = new Array();
+       arr[0]=10;
+       arr[1]=33;
+       arr[2]=22;
+       arr[3]=44;
+      
+      arr.length=10;
+        
+       console.log(arr);
+
+
+     //  console.log(typeof arr);  //object
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

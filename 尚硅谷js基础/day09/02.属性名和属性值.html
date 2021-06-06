@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = new Object();
+         //属性名：   obj.name 或者 obj["name"]
+        obj.name = "孙悟空";
+        obj["123"] = 789;
+        var n= "nihao";
+        obj["nihao"] = "你好";
+        // console.log(obj["123"]);
+        // console.log(obj[n]);
+
+        var obj2= new Object();
+        obj2.name="猪八戒";
+        obj.test=obj2;
+        console.log(obj.test.name);
+
+        //in运算符 可以检查一个对象中是否含有指定的属性
+           //  “属性名”  in 对象
+        console.log("test2" in obj); //false
+        console.log("test" in obj); //true
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
